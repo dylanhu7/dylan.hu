@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Dear Blueno",
+    "description": "An anonymous forum for the Brown University community.",
+    "image": "/media/dear-blueno.png",
+    "link": "https://dearblueno.net"
+  },
+  {
+    "title": "Cloth Simulation",
+    "description": "Physically-based mass and spring cloth model evaluated using iterative constraint satisfaction.",
+    "image": "/media/cloth-simulation.webp"
+  },
+  {
+    "title": "Pathtracer",
+    "description": "A C++ path-tracing renderer with global illumination, direct lighting, reflection, refraction, and textures.",
+    "image": "/media/pathtracer.png"
+  },
+  {
+    "title": "Finite Element Simulation",
+    "description": "Deforming solid objects by computing stress and strain, evaluating internal forces, and resolving collisions.",
+    "image": "/media/simulation.webp"
+  }
+]
