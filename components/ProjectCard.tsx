@@ -19,8 +19,10 @@ const LinkWrapper = ({
 }) => {
   if (href) {
     return (
-      <Link href={href}>
-        <a className={className}>{children}</a>
+      <Link href={href} passHref>
+        <a className={className} target="_blank">
+          {children}
+        </a>
       </Link>
     );
   } else {
