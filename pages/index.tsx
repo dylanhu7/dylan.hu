@@ -5,6 +5,18 @@ import Section from "components/mdx/Section";
 import projects from "content/projects.json";
 import ProjectCard from "components/ProjectCard";
 
+import DearBluenoMedia from "public/media/dear-blueno.webp";
+import ClothSimulationMedia from "public/media/cloth-simulation.webp";
+import PathtracerMedia from "public/media/pathtracer.webp";
+import SimulationMedia from "public/media/simulation.webp";
+
+const projectMedia = [
+  DearBluenoMedia,
+  ClothSimulationMedia,
+  PathtracerMedia,
+  SimulationMedia,
+];
+
 const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center w-full sm:pt-32 py-16 px-8">
@@ -34,7 +46,7 @@ const Home: NextPage = () => {
                 key={index}
                 title={project.title}
                 description={project.description}
-                image={project.image}
+                image={projectMedia[index]}
                 link={project.link}
               />
             ))}

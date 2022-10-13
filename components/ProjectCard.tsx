@@ -1,10 +1,10 @@
-import Image from "next/future/image";
+import Image, { StaticImageData } from "next/future/image";
 import Link from "next/link";
 
 type ProjectCardProps = {
   title: string;
   description: string;
-  image: string;
+  image: StaticImageData;
   link?: string;
 };
 
@@ -42,10 +42,9 @@ export default function ProjectCard(props: ProjectCardProps) {
           alt={props.title}
           style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
           placeholder="blur"
-          blurDataURL={props.image}
-          priority
           width={1024}
           height={1024}
+          priority
         ></Image>
       </div>
       <div className="p-4">

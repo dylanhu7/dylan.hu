@@ -2,7 +2,7 @@
   {
     "title": "Dear Blueno",
     "description": "An anonymous forum for the Brown University community.",
-    "image": "/media/dear-blueno.png",
+    "image": "/media/dear-blueno.webp",
     "link": "https://dearblueno.net"
   },
   {
@@ -13,7 +13,7 @@
   {
     "title": "Pathtracer",
     "description": "A C++ path-tracing renderer with global illumination, direct lighting, reflection, refraction, and textures.",
-    "image": "/media/pathtracer.png"
+    "image": "/media/pathtracer.webp"
   },
   {
     "title": "Finite Element Simulation",
