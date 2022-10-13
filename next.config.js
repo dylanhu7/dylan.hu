@@ -16,8 +16,33 @@ module.exports = withMDX({
   async redirects() {
     return [
       {
+        source: "/(.zoom)",
+        destination: "/zoom",
+        permanent: true,
+      },
+      {
         source: "/all",
         destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/zoom",
+        destination: "https://brown.zoom.us/my/dylanhu",
+        permanent: true,
+      },
+      {
+        source: "/github",
+        destination: "https://github.com/dylanhu7",
+        permanent: true,
+      },
+      {
+        source: "/gh",
+        destination: "https://github.com/dylanhu7",
+        permanent: true,
+      },
+      {
+        source: "/linkedin",
+        destination: "https://www.linkedin.com/in/dylanhu7/",
         permanent: true,
       },
     ];
