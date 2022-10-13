@@ -16,11 +16,6 @@ module.exports = withMDX({
   async redirects() {
     return [
       {
-        source: "/(.zoom)",
-        destination: "/zoom",
-        permanent: true,
-      },
-      {
         source: "/all",
         destination: "/",
         permanent: true,
