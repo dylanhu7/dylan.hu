@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/future/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 type ProjectCardProps = {
@@ -19,10 +19,8 @@ const LinkWrapper = ({
 }) => {
   if (href) {
     return (
-      <Link href={href} passHref>
-        <a className={className} target="_blank">
+      <Link href={href} className={className} target="_blank">
           {children}
-        </a>
       </Link>
     );
   } else {
@@ -34,22 +32,19 @@ export default function ProjectCard(props: ProjectCardProps) {
   return (
     <LinkWrapper
       href={props.link}
-      className="sm:w-[calc(50%_-_0.5rem)] shadow-xl rounded-md"
+      className="sm:w-[calc(50%_-_0.5rem)] shadow-xl rounded-md dark:bg-gray-800"
     >
       <div className="aspect-video overflow-hidden rounded-t-md">
         <Image
           src={props.image}
           alt={props.title}
-          style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
           placeholder="blur"
-          width={1024}
-          height={1024}
           priority
         ></Image>
       </div>
-      <div className="p-4">
-        <h2 className="font-semibold">{props.title}</h2>
-        <p>{props.description}</p>
+      <div className="flex flex-col p-4 gap-1">
+        <h2 className="font-semibold text-gray-700 dark:text-gray-50">{props.title}</h2>
+        <p className="text-gray-700 dark:text-gray-50">{props.description}</p>
       </div>
     </LinkWrapper>
   );

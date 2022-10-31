@@ -9,6 +9,9 @@ const withMDX = require("@next/mdx")({
   },
 });
 module.exports = withMDX({
+  experimental: {
+    appDir: true,
+  },
   reactStrictMode: true,
   swcMinify: true,
   // Append the default value with md extensions
