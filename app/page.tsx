@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import Section from "components/mdx/Section";
 import projects from "content/projects.json";
 import ProjectCard from "components/ProjectCard";

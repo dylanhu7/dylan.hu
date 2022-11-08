@@ -43,6 +43,11 @@ module.exports = withMDX({
         destination: "https://www.linkedin.com/in/dylanhu7/",
         permanent: true,
       },
+      {
+        source: "/resume",
+        destination: "/resume.pdf",
+        permanent: true,
+      }
     ];
   },
 });
