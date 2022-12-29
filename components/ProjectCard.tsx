@@ -57,6 +57,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             autoPlay
             loop
             muted
+            playsInline
             className="rounded-t-md"
           />
         )}
