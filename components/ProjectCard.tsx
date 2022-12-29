@@ -48,7 +48,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             src={props.media}
             alt={props.title}
             placeholder="blur"
-            sizes="(max-width: 640px) 100vw, 320px"
+            sizes="(max-width: 640px) 100vw, 600px"
           ></Image>
         )}
         {!isImage(props.media, props.mediaType) && (
