@@ -50,7 +50,7 @@ const Home: NextPage = () => {
           <div className="flex flex-wrap gap-4">
             {projects.map((project, index) => (
               <ProjectCard
-                key={index}
+                key={project.id}
                 title={project.title}
                 description={project.description}
                 media={projectMedia[index]}
