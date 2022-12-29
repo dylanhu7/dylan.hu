@@ -1,18 +1,17 @@
 import type { NextPage } from "next";
+import { StaticImageData } from "next/image";
 import Section from "components/mdx/Section";
+import Paragraph from "components/mdx/Paragraph";
 import projects from "content/projects.json";
 import ProjectCard from "components/ProjectCard";
-
 import DearBluenoMedia from "public/media/dear-blueno.webp";
 import PathtracerMedia from "public/media/pathtracer.webp";
-import Paragraph from "components/mdx/Paragraph";
-import { StaticImageData } from "next/image";
 
 const projectMedia: (StaticImageData | string)[] = [
   DearBluenoMedia,
-  "media/cloth-simulation.webm",
+  "media/cloth-simulation.mp4",
   PathtracerMedia,
-  "media/simulation.webm",
+  "media/simulation.mp4",
 ];
 
 const Home: NextPage = () => {
