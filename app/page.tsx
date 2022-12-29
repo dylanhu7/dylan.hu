@@ -4,16 +4,15 @@ import projects from "content/projects.json";
 import ProjectCard from "components/ProjectCard";
 
 import DearBluenoMedia from "public/media/dear-blueno.webp";
-import ClothSimulationMedia from "public/media/cloth-simulation.webp";
 import PathtracerMedia from "public/media/pathtracer.webp";
-import SimulationMedia from "public/media/simulation.webp";
 import Paragraph from "components/mdx/Paragraph";
+import { StaticImageData } from "next/image";
 
-const projectMedia = [
+const projectMedia: (StaticImageData | string)[] = [
   DearBluenoMedia,
-  ClothSimulationMedia,
+  "media/cloth-simulation.webm",
   PathtracerMedia,
-  SimulationMedia,
+  "media/simulation.webm",
 ];
 
 const Home: NextPage = () => {
@@ -30,13 +29,19 @@ const Home: NextPage = () => {
         </Section>
         <Section>
           <Paragraph>
-          {"I'm currently a junior at Brown University studying computer science with a focus on computer graphics, computer vision, deep learning, and software engineering."}
+            {
+              "I'm currently a junior at Brown University studying computer science with a focus on computer graphics, computer vision, deep learning, and software engineering."
+            }
           </Paragraph>
           <Paragraph>
-          {"I am passionate about designing and building software for all kinds of communities and applications, as well as exploring the cutting-edge of research in visual computing."}
+            {
+              "I am passionate about designing and building software for all kinds of communities and applications, as well as exploring the cutting-edge of research in visual computing."
+            }
           </Paragraph>
           <Paragraph>
-          {"In my free time, I enjoy competitive esports and learning Japanese ツ"}
+            {
+              "In my free time, I enjoy competitive esports and learning Japanese ツ"
+            }
           </Paragraph>
         </Section>
         <Section>
@@ -49,7 +54,8 @@ const Home: NextPage = () => {
                 key={index}
                 title={project.title}
                 description={project.description}
-                image={projectMedia[index]}
+                media={projectMedia[index]}
+                mediaType={project.mediaType}
                 link={project.link}
               />
             ))}

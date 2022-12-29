@@ -4,7 +4,8 @@ import Link from "next/link";
 type ProjectCardProps = {
   title: string;
   description: string;
-  image: StaticImageData;
+  media: StaticImageData | string;
+  mediaType: string;
   link?: string;
 };
 
@@ -20,12 +21,19 @@ const LinkWrapper = ({
   if (href) {
     return (
       <Link href={href} className={className} target="_blank">
-          {children}
+        {children}
       </Link>
     );
   } else {
     return <div className={className}>{children}</div>;
   }
+};
+
+const isImage = (
+  media: StaticImageData | string,
+  mediaType: string
+): media is StaticImageData => {
+  return mediaType === "image";
 };
 
 export default function ProjectCard(props: ProjectCardProps) {
@@ -35,15 +43,28 @@ export default function ProjectCard(props: ProjectCardProps) {
       className="sm:w-[calc(50%_-_0.5rem)] shadow-xl rounded-md dark:bg-gray-800"
     >
       <div className="aspect-video overflow-hidden rounded-t-md">
-        <Image
-          src={props.image}
-          alt={props.title}
-          placeholder="blur"
-          priority
-        ></Image>
+        {isImage(props.media, props.mediaType) && (
+          <Image
+            src={props.media}
+            alt={props.title}
+            placeholder="blur"
+            sizes="(max-width: 640px) 100vw, 320px"
+          ></Image>
+        )}
+        {!isImage(props.media, props.mediaType) && (
+          <video
+            src={props.media}
+            autoPlay
+            loop
+            muted
+            className="rounded-t-md"
+          />
+        )}
       </div>
       <div className="flex flex-col p-4 gap-1">
-        <h2 className="font-semibold text-gray-700 dark:text-gray-50">{props.title}</h2>
+        <h2 className="font-semibold text-gray-700 dark:text-gray-50">
+          {props.title}
+        </h2>
         <p className="text-gray-700 dark:text-gray-50">{props.description}</p>
       </div>
     </LinkWrapper>
