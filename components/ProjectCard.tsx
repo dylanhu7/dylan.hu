@@ -37,6 +37,8 @@ const isImage = (
 };
 
 export default function ProjectCard(props: ProjectCardProps) {
+  !isImage(props.media, props.mediaType) &&
+    console.log(props.media.replace(".mp4", ".webp"));
   return (
     <LinkWrapper
       href={props.link}
@@ -49,6 +51,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             alt={props.title}
             placeholder="blur"
             sizes="(max-width: 640px) 100vw, 600px"
+            priority
           ></Image>
         )}
         {!isImage(props.media, props.mediaType) && (
@@ -59,6 +62,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             muted
             playsInline
             className="rounded-t-md"
+            poster={props.media.replace(".mp4", ".webp")}
           />
         )}
       </div>
